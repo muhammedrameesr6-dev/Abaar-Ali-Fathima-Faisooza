@@ -1,6 +1,6 @@
 /**
  * Luxury Falling Rose Petals Engine
- * Realistic fluttering 3D falling petals with organic motion
+ * Theme: Classic Maroon (#800000) & Warm Rose
  */
 (function() {
   const canvas = document.createElement('canvas');
@@ -21,13 +21,13 @@
   let width = window.innerWidth;
   let height = window.innerHeight;
   let petals = [];
-  const PETAL_COUNT = 24; // Balanced for elegance and 60fps performance on mobile
+  const PETAL_COUNT = 24;
 
   const PETAL_COLORS = [
-    { start: '#8A1830', end: '#580A1C' }, // Deep Burgundy
-    { start: '#A82542', end: '#731227' }, // Rich Crimson
-    { start: '#B83552', end: '#861A32' }, // Ruby Rose
-    { start: '#C95D75', end: '#982C43' }, // Soft Mauve/Rose
+    { start: '#800000', end: '#500000' }, // Classic Maroon #800000
+    { start: '#940a1c', end: '#63000f' }, // Deep Crimson Maroon
+    { start: '#730000', end: '#450000' }, // Dark Wine Maroon
+    { start: '#a81d32', end: '#730014' }, // Ruby Maroon
   ];
 
   class Petal {
@@ -38,9 +38,9 @@
     reset(initial = false) {
       this.x = Math.random() * width;
       this.y = initial ? Math.random() * height : -30;
-      this.size = Math.random() * 9 + 8; // Size between 8 and 17px
-      this.speedY = Math.random() * 0.9 + 0.6; // Gentle fall
-      this.speedX = Math.random() * 0.7 - 0.35; // Slight drift
+      this.size = Math.random() * 9 + 8;
+      this.speedY = Math.random() * 0.9 + 0.6;
+      this.speedX = Math.random() * 0.7 - 0.35;
       this.rotation = Math.random() * 360;
       this.rotationSpeed = (Math.random() - 0.5) * 1.5;
       this.flip = Math.random() * Math.PI;
@@ -71,7 +71,6 @@
       ctx.scale(1, Math.cos(this.flip));
       ctx.globalAlpha = this.opacity;
 
-      // Draw graceful curved petal
       const grad = ctx.createLinearGradient(0, -this.size, 0, this.size);
       grad.addColorStop(0, this.color.start);
       grad.addColorStop(1, this.color.end);
@@ -92,8 +91,7 @@
       ctx.closePath();
       ctx.fill();
 
-      // Subtle center vein highlight
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.18)';
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
       ctx.lineWidth = 0.6;
       ctx.beginPath();
       ctx.moveTo(0, -this.size * 0.75);
