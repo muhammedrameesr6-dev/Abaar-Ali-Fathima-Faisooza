@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mohammed Abrar Ali & Fathima Fairooza | Wedding Invitation</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Welcome Invitation Intro Overlay / Wax Seal Envelope -->
+  <div class="welcome-overlay" id="welcome-overlay">
+    <div class="envelope-card">
+      <div class="wax-seal">
+        <span>💍</span>
+      </div>
+      <div class="overlay-title">WEDDING INVITATION</div>
+      <h2 class="overlay-names">Mohammed Abrar Ali<br>&amp;<br>Fathima Fairooza</h2>
+      <p class="overlay-subtitle">Request the honor of your presence and blessings</p>
+      <button class="open-invitation-btn" id="open-invitation-btn">
+        <span>Open Invitation</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Scroll-Snap Container -->
+  <div class="invitation-wrapper" id="invitation-wrapper">
+
+    <!-- ====================================================================
+         PAGE 1: HERO & INVITATION LETTER
+         ==================================================================== -->
+    <section class="wedding-page" id="page-1">
+      <!-- Top Left & Bottom Right Florals -->
+      <div class="page-floral top-left"></div>
+      <div class="page-floral bottom-right"></div>
+
+      <div class="page-content">
+        <!-- Bismillah Calligraphy -->
+        <div class="bismillah-block fade-on-scroll">
+          <div class="bismillah-arabic" id="bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+          <div class="bismillah-english" id="bismillah-english">In the Name of Allah</div>
+          <div class="bismillah-subenglish" id="bismillah-subenglish">The Most Gracious &amp; The Most Merciful</div>
+        </div>
+
+        <!-- Diamond Divider -->
+        <div class="diamond-divider fade-on-scroll">
+          <span class="diamond-icon">◆</span>
+        </div>
+
+        <!-- Cordially Invited Heading -->
+        <h2 class="invite-title fade-on-scroll" id="invite-heading">You Are Cordially Invited</h2>
+
+        <!-- Diamond Divider -->
+        <div class="diamond-divider fade-on-scroll">
+          <span class="diamond-icon">◆</span>
+        </div>
+
+        <!-- Invitation Paragraph -->
+        <p class="invite-body fade-on-scroll" id="invite-body">
+          With hearts full of joy and gratitude, we cordially invite your esteemed presence along with your family on the auspicious occasion of the wedding ceremony of our beloved ones. Your prayers, blessings, and gracious presence will make this sacred and joyous occasion truly memorable.
+        </p>
+
+        <!-- Scroll Next Indicator -->
+        <div class="scroll-next-btn" onclick="document.getElementById('page-2').scrollIntoView({behavior: 'smooth'})">
+          <span>Swipe to explore</span>
+          <div class="scroll-arrow">↓</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PAGE 2: QURAN VERSE & COUPLE WITH FAMILY LINEAGE
+         ==================================================================== -->
+    <section class="wedding-page" id="page-2">
+      <!-- Top Left & Bottom Right Florals -->
+      <div class="page-floral top-left"></div>
+      <div class="page-floral bottom-right"></div>
+
+      <div class="page-content">
+        <!-- Quranic Blessing -->
+        <div class="quran-ayah-box fade-on-scroll">
+          <div class="quran-arabic" id="quran-arabic">
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+          </div>
+          <div class="quran-ref" id="quran-ref">SURAH AR-RUM | 30:21</div>
+          <div class="quran-translation" id="quran-translation">
+            "And He placed between you affection and mercy. Indeed in that are signs for a people who reflect."
+          </div>
+        </div>
+
+        <!-- Couple Details -->
+        <div class="couple-details-wrapper fade-on-scroll">
+          
+          <!-- Bride Details -->
+          <div class="person-block">
+            <div class="person-tag">THE BRIDE</div>
+            <h1 class="person-name" id="bride-name">Fathima Fairooza</h1>
+            <p class="parents-desc" id="bride-parents">D/O Mohammed Imthiyaz &amp; Khairunnisa</p>
+            <div class="lineage-clean">
+              <p>Granddaughter of <strong>Abdul Rahman &amp; Asiya</strong></p>
+              <p>Family: <strong>T.A Abdullah Anjillam &amp; Jameela</strong></p>
+            </div>
+          </div>
+
+          <!-- Ampersand Divider -->
+          <div class="ampersand-divider">
+            <span class="ampersand-symbol">&amp;</span>
+          </div>
+
+          <!-- Groom Details -->
+          <div class="person-block">
+            <div class="person-tag">THE GROOM</div>
+            <h1 class="person-name" id="groom-name">Mohammed Abrar Ali</h1>
+            <p class="parents-desc" id="groom-parents">S/O Mohammad Razi TS &amp; Saheedabi KA</p>
+            <div class="lineage-clean">
+              <p>Grandson of <strong>T Sulaiman Haji Thangees &amp; A Zainabi Hajuma</strong></p>
+              <p>Paternal Family: <strong>Aboobacker Bellakkaran &amp; Khadeeja Hajuma Peediekkaran</strong></p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Date Banner -->
+        <div class="wedding-date-container fade-on-scroll">
+          <div class="wedding-date-banner" id="wedding-date-display">
+            SATURDAY, 19 DECEMBER 2026
+          </div>
+          <div class="hijri-date-badge" id="hijri-date-display">
+            ✦ 10 RAJAB 1448 ✦
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PAGE 3: WEDDING CEREMONY & SASA RESORT VENUE
+         ==================================================================== -->
+    <section class="wedding-page" id="page-3">
+      <!-- Top Left & Bottom Right Florals -->
+      <div class="page-floral top-left"></div>
+      <div class="page-floral bottom-right"></div>
+
+      <div class="page-content">
+        <!-- Ceremony Info -->
+        <div class="event-info-block fade-on-scroll">
+          <div class="event-title">WEDDING CEREMONY</div>
+          <div class="event-date" id="event-date">Saturday, 19 December 2026 (10 Rajab 1448)</div>
+          <div class="event-time" id="event-time">After Asr Prayer – 4:30 PM</div>
+        </div>
+
+        <!-- Diamond Divider -->
+        <div class="diamond-divider fade-on-scroll">
+          <span class="diamond-icon">◆</span>
+        </div>
+
+        <!-- Venue Title -->
+        <div class="venue-header-box fade-on-scroll">
+          <h3 class="venue-title" id="venue-name">SASA Resort</h3>
+          <p class="venue-landmark" id="venue-landmark">CITIZEN NAGAR ROAD, ERIYAPADY, ALAMPADY</p>
+        </div>
+
+        <!-- Venue Card with Map Button -->
+        <div class="venue-card fade-on-scroll">
+          <div class="venue-card-left">
+            <div class="map-pin-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="venue-card-info">
+              <h4 id="venue-card-name">SASA Resort</h4>
+              <p id="venue-card-sub">CITIZEN NAGAR ROAD, ERIYAPADY, ALAMPADY</p>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=SASA+Resort+Citizen+Nagar+Road+Eriyapady+Alampady" class="map-button" id="map-btn" target="_blank">
+            <span>MAP</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PAGE 4: LIVE COUNTDOWN & CALENDAR BUTTONS
+         ==================================================================== -->
+    <section class="wedding-page" id="page-4">
+      <!-- Top Left & Bottom Right Florals -->
+      <div class="page-floral top-left"></div>
+      <div class="page-floral bottom-right"></div>
+
+      <div class="page-content">
+        <div class="countdown-card fade-on-scroll">
+          <div class="countdown-star">✦</div>
+          <div class="countdown-header-title">COUNTING DOWN TO THE CEREMONY</div>
+
+          <!-- 4 Frosted Countdown Boxes -->
+          <div class="countdown-grid">
+            <div class="countdown-item">
+              <div class="countdown-number" id="cd-days">00</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="cd-hours">00</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="cd-mins">00</div>
+              <div class="countdown-label">Mins</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="cd-secs">00</div>
+              <div class="countdown-label">Secs</div>
+            </div>
+          </div>
+
+          <!-- Date & Time Subtitle -->
+          <div class="countdown-date-sub" id="countdown-date-display">
+            SATURDAY, 19 DECEMBER 2026 • 4:30 PM
+          </div>
+
+          <!-- Add to Calendar Buttons -->
+          <div class="calendar-actions">
+            <a href="#" class="btn-secondary" id="add-gcal-btn">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Google Calendar</span>
+            </a>
+            <button class="btn-secondary" id="add-ics-btn">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Apple / Outlook</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PAGE 5: RSVP FORM & COUPLE SIGNOFF
+         ==================================================================== -->
+    <section class="wedding-page" id="page-5">
+      <!-- Top Left & Bottom Right Florals -->
+      <div class="page-floral top-left"></div>
+      <div class="page-floral bottom-right"></div>
+
+      <div class="page-content">
+        <div class="rsvp-card fade-on-scroll">
+          <h3 class="rsvp-title">RSVP &amp; BLESSINGS</h3>
+          <p class="rsvp-desc">Please let us know if you will be joining our celebration</p>
+
+          <form id="rsvp-form">
+            <div class="form-group">
+              <label class="form-label" for="rsvp-name">Your Full Name</label>
+              <input type="text" id="rsvp-name" class="form-input" placeholder="e.g. Muhammed Shafi & Family" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Will you be attending?</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="attendance" value="Joyfully Attending" checked>
+                  <span>Joyfully Attending</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="attendance" value="Regretfully Declining">
+                  <span>With You in Spirit</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="rsvp-guests">Number of Guests</label>
+              <select id="rsvp-guests" class="form-select">
+                <option value="1">1 Person</option>
+                <option value="2" selected>2 Persons</option>
+                <option value="3">3 Persons</option>
+                <option value="4">4 Persons</option>
+                <option value="5+">5+ Family Members</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="rsvp-message">Warm Wishes for the Couple</label>
+              <textarea id="rsvp-message" class="form-textarea" rows="2" placeholder="Send your prayers and greetings..."></textarea>
+            </div>
+
+            <button type="submit" class="rsvp-submit-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.838.814 2.8.814 3.179 0 5.766-2.586 5.766-5.766 0-3.18-2.587-5.766-5.77-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.748 0-3.385-.45-4.819-1.236l-7.181 1.884 1.916-6.996c-.881-1.488-1.396-3.228-1.396-5.084 0-5.514 4.486-10 10-10s10 4.486 10 10z"/>
+              </svg>
+              <span>Confirm RSVP via WhatsApp</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Footer Signoff -->
+        <div class="footer-box fade-on-scroll">
+          <div class="footer-couple" id="footer-couple-name">Fathima Fairooza &amp; Mohammed Abrar Ali</div>
+          <p class="footer-sub">With Love, Prayers &amp; Gratitude</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FLOATING MUSIC BUTTON -->
+  <button class="floating-music-btn" id="music-toggle-btn" title="Toggle Wedding Music" aria-label="Toggle Wedding Music">
+    <span class="music-note-icon">🎵</span>
+  </button>
+
+  <!-- Background Audio Element -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="assets/audio.m4a" type="audio/mp4">
+  </audio>
+
+  <!-- JavaScript Configuration & Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/petals.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

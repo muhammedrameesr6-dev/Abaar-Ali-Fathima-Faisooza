@@ -1,0 +1,904 @@
+/* ==========================================================================
+   Luxury Multi-Page Snap Wedding Invitation Stylesheet
+   Every screen/page features Top-Left & Bottom-Right Burgundy Florals
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap');
+
+:root {
+  --color-primary: #78172c;       /* Deep Burgundy */
+  --color-primary-dark: #520919;  /* Dark Wine Red */
+  --color-gold: #bfa14f;         /* Elegant Warm Gold */
+  --color-text-main: #2e1d23;    /* Deep Charcoal Plum */
+  --color-text-muted: #755c64;   /* Soft Rose Gray */
+  --color-text-light: #9c848c;   /* Delicate Muted */
+  --color-bg-ivory: #fcf9f5;     /* Pure Luxury Warm Ivory */
+  --font-arabic: 'Amiri', 'Scheherazade New', serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-royal: 'Cinzel', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #f4ede5;
+  color: var(--color-text-main);
+  font-family: var(--font-serif);
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.8) 0%, transparent 60%),
+    linear-gradient(180deg, #f5eee6 0%, #ebe2d8 100%);
+}
+
+/* Master Invitation Wrapper with Full-Screen Page Snapping */
+.invitation-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--color-bg-ivory);
+  box-shadow: 0 25px 80px rgba(70, 10, 22, 0.12);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 20px 0;
+  }
+  .invitation-wrapper {
+    height: 92vh;
+    border-radius: 40px;
+    border: 1px solid rgba(191, 161, 79, 0.25);
+  }
+}
+
+/* ==========================================================================
+   Each Full "Page" Screen with its own Top-Left & Bottom-Right Florals
+   ========================================================================== */
+.wedding-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 28px 65px;
+  text-align: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
+  background-color: var(--color-bg-ivory);
+  background-image: 
+    radial-gradient(ellipse at 50% 15%, rgba(255, 255, 255, 0.95) 0%, rgba(252, 249, 245, 0.98) 75%);
+}
+
+/* Page inner content container */
+.page-content {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 0;
+}
+
+/* ==========================================================================
+   Floral Corners (Rendered on EVERY Page)
+   ========================================================================== */
+.page-floral {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  user-select: none;
+}
+
+.page-floral.top-left {
+  top: -10px;
+  left: -10px;
+  width: 175px;
+  height: 175px;
+  background-image: url('../assets/floral_top_left.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 6px 14px rgba(90, 12, 28, 0.12));
+}
+
+.page-floral.bottom-right {
+  bottom: -12px;
+  right: -12px;
+  width: 185px;
+  height: 185px;
+  background-image: url('../assets/floral_bottom_right.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 -6px 14px rgba(90, 12, 28, 0.12));
+}
+
+/* ==========================================================================
+   Dividers
+   ========================================================================== */
+.diamond-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px auto;
+  width: 65%;
+  color: var(--color-gold);
+}
+
+.diamond-divider::before,
+.diamond-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to var(--direction, right), transparent, rgba(191, 161, 79, 0.35));
+}
+
+.diamond-divider::before { --direction: right; }
+.diamond-divider::after { --direction: left; }
+
+.diamond-icon {
+  font-size: 8px;
+  transform: rotate(45deg);
+  display: inline-block;
+  color: var(--color-gold);
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   PAGE 1: COVER & CORDIALLY INVITED
+   ========================================================================== */
+.bismillah-block {
+  margin-bottom: 16px;
+}
+
+.bismillah-arabic {
+  font-family: var(--font-arabic);
+  font-size: 27px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.9;
+  letter-spacing: 1px;
+}
+
+.bismillah-english {
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+  text-transform: capitalize;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.bismillah-subenglish {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--color-text-light);
+  margin-top: 2px;
+  font-style: italic;
+}
+
+.invite-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  letter-spacing: 2.5px;
+  color: var(--color-primary);
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 10px 0;
+}
+
+.invite-body {
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  line-height: 2;
+  color: var(--color-text-main);
+  max-width: 340px;
+  margin: 12px auto 25px;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0.92;
+}
+
+.scroll-next-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-primary);
+  opacity: 0.6;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  animation: bounceSlow 2.4s infinite;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.scroll-arrow {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+@keyframes bounceSlow {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(6px); }
+  60% { transform: translateY(3px); }
+}
+
+/* ==========================================================================
+   PAGE 2: QURAN AYAH & COUPLE DETAILS
+   ========================================================================== */
+.quran-ayah-box {
+  margin-bottom: 22px;
+  padding: 0 5px;
+}
+
+.quran-arabic {
+  font-family: var(--font-arabic);
+  font-size: 20px;
+  line-height: 2.2;
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
+  direction: rtl;
+  text-align: center;
+}
+
+.quran-ref {
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  letter-spacing: 3px;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.quran-translation {
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  font-style: italic;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.couple-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 10px 0 18px;
+}
+
+.person-block {
+  padding: 4px 0;
+}
+
+.person-tag {
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  letter-spacing: 2.5px;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.person-name {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--color-primary);
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.parents-desc {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--color-text-main);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.lineage-clean {
+  margin-top: 6px;
+  font-family: var(--font-serif);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.lineage-clean strong {
+  font-weight: 600;
+  font-style: normal;
+  color: var(--color-text-main);
+}
+
+.ampersand-symbol {
+  font-family: var(--font-script);
+  font-size: 36px;
+  color: var(--color-gold);
+  line-height: 1;
+  opacity: 0.9;
+  margin: 2px 0;
+  display: inline-block;
+}
+
+.wedding-date-container {
+  display: inline-block;
+  margin: 8px auto 0;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(191, 161, 79, 0.25);
+  border-bottom: 1px solid rgba(191, 161, 79, 0.25);
+}
+
+.wedding-date-banner {
+  font-family: var(--font-royal);
+  font-size: 13.5px;
+  letter-spacing: 3px;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.hijri-date-badge {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   PAGE 3: EVENT CEREMONY & VENUE
+   ========================================================================== */
+.event-info-block {
+  margin-bottom: 22px;
+}
+
+.event-title {
+  font-family: var(--font-royal);
+  font-size: 15px;
+  letter-spacing: 3.5px;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.event-date {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--color-text-main);
+  font-weight: 500;
+}
+
+.event-time {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: var(--color-primary-dark);
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.venue-header-box {
+  margin-top: 15px;
+  margin-bottom: 16px;
+}
+
+.venue-title {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.venue-landmark {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.venue-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(191, 161, 79, 0.25);
+  border-radius: 20px;
+  padding: 14px 18px;
+  width: 100%;
+  max-width: 360px;
+  margin: 15px auto 0;
+  box-shadow: 0 8px 24px rgba(82, 9, 25, 0.05);
+}
+
+.venue-card-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.map-pin-icon {
+  width: 34px;
+  height: 34px;
+  background: rgba(120, 23, 44, 0.06);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.venue-card-info h4 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.venue-card-info p {
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.map-button {
+  background: linear-gradient(135deg, #8A1830 0%, #600B1D 100%);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 12px rgba(120, 23, 44, 0.2);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.map-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(120, 23, 44, 0.3);
+}
+
+/* ==========================================================================
+   PAGE 4: LIVE COUNTDOWN & CALENDAR
+   ========================================================================== */
+.countdown-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(191, 161, 79, 0.25);
+  border-radius: 24px;
+  padding: 26px 20px 22px;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(82, 9, 25, 0.05);
+}
+
+.countdown-star {
+  color: var(--color-gold);
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.countdown-header-title {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  letter-spacing: 2.5px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.countdown-item {
+  background: rgba(250, 243, 244, 0.85);
+  border: 1px solid rgba(120, 23, 44, 0.06);
+  border-radius: 14px;
+  padding: 12px 2px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-number {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-family: var(--font-sans);
+  font-size: 7.5px;
+  letter-spacing: 1.5px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.countdown-date-sub {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  letter-spacing: 1.5px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.calendar-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(120, 23, 44, 0.2);
+  color: var(--color-primary);
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(120, 23, 44, 0.05);
+  border-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   PAGE 5: RSVP & FOOTER
+   ========================================================================== */
+.rsvp-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(191, 161, 79, 0.25);
+  border-radius: 24px;
+  padding: 24px 20px 20px;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto 16px;
+  box-shadow: 0 10px 30px rgba(82, 9, 25, 0.05);
+  text-align: left;
+}
+
+.rsvp-title {
+  font-family: var(--font-royal);
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: var(--color-primary);
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.rsvp-desc {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 9px 12px;
+  background: rgba(250, 246, 240, 0.8);
+  border: 1px solid rgba(191, 161, 79, 0.25);
+  border-radius: 10px;
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  color: var(--color-text-main);
+  outline: none;
+}
+
+.form-input:focus, .form-textarea:focus {
+  border-color: var(--color-primary);
+  background: #fff;
+}
+
+.radio-group {
+  display: flex;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  color: var(--color-text-main);
+  cursor: pointer;
+}
+
+.rsvp-submit-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 11px;
+  background: linear-gradient(135deg, #128c7e 0%, #075e54 100%);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(7, 94, 84, 0.25);
+  transition: all 0.25s ease;
+}
+
+.rsvp-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(7, 94, 84, 0.35);
+}
+
+.footer-box {
+  margin-top: 6px;
+}
+
+.footer-couple {
+  font-family: var(--font-script);
+  font-size: 34px;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+
+.footer-sub {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   Floating Music Button (Fixed always)
+   ========================================================================== */
+.floating-music-btn {
+  position: fixed;
+  bottom: 24px;
+  right: calc(50% - 210px);
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(191, 161, 79, 0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(82, 9, 25, 0.16);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.25s ease;
+}
+
+@media (max-width: 460px) {
+  .floating-music-btn {
+    right: 20px;
+  }
+}
+
+.floating-music-btn.playing {
+  animation: musicPulse 2s infinite ease-in-out;
+  border-color: var(--color-gold);
+}
+
+.floating-music-btn.playing .music-note-icon {
+  animation: noteRotate 4s linear infinite;
+  display: inline-block;
+}
+
+@keyframes musicPulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(82, 9, 25, 0.16); }
+  50% { box-shadow: 0 0 20px rgba(191, 161, 79, 0.45); }
+}
+
+@keyframes noteRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Welcome Invitation Intro Overlay
+   ========================================================================== */
+.welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 8, 13, 0.88);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.welcome-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.04);
+}
+
+.envelope-card {
+  width: 90%;
+  max-width: 360px;
+  background: #fdfaf6;
+  border-radius: 26px;
+  padding: 38px 24px;
+  text-align: center;
+  border: 1px solid rgba(191, 161, 79, 0.35);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.wax-seal {
+  width: 64px;
+  height: 64px;
+  background: radial-gradient(circle at 30% 30%, #a82542 0%, #580a1c 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #dfba54;
+  font-size: 26px;
+  box-shadow: 0 8px 20px rgba(88, 10, 28, 0.35);
+  border: 2px solid rgba(223, 186, 84, 0.4);
+}
+
+.overlay-title {
+  font-family: var(--font-royal);
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+}
+
+.overlay-names {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.overlay-subtitle {
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.open-invitation-btn {
+  background: linear-gradient(135deg, #8A1830 0%, #5E0A1C 100%);
+  color: #fff;
+  border: 1px solid rgba(223, 186, 84, 0.5);
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(94, 10, 28, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.open-invitation-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(94, 10, 28, 0.45);
+}
+
+/* Scroll reveal animations */
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
