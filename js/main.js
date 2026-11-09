@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAudioPlayer();
   initScrollAnimations();
   initCalendarButtons();
-  initRSVPForm();
+  initWishesForm();
   initEnvelopeIntro();
 });
 
@@ -16,26 +16,32 @@ document.addEventListener('DOMContentLoaded', () => {
 function initFromConfig() {
   if (typeof WEDDING_CONFIG === 'undefined') return;
 
-  // Title & Metadata
-  document.title = `${WEDDING_CONFIG.couple.groom} & ${WEDDING_CONFIG.couple.bride} | Wedding Invitation`;
+  // Title & Metadata (Bride First, Groom Second)
+  document.title = `${WEDDING_CONFIG.couple.bride} & ${WEDDING_CONFIG.couple.groom} | Wedding Invitation`;
 
   // Couple names & Parents
-  const groomEl = document.getElementById('groom-name');
-  if (groomEl) groomEl.textContent = WEDDING_CONFIG.couple.groom;
-
-  const groomParentsEl = document.getElementById('groom-parents');
-  if (groomParentsEl) groomParentsEl.textContent = WEDDING_CONFIG.couple.groomParentsFormatted || WEDDING_CONFIG.couple.groomParents;
-
   const brideEl = document.getElementById('bride-name');
   if (brideEl) brideEl.textContent = WEDDING_CONFIG.couple.bride;
 
   const brideParentsEl = document.getElementById('bride-parents');
   if (brideParentsEl) brideParentsEl.textContent = WEDDING_CONFIG.couple.brideParentsFormatted || WEDDING_CONFIG.couple.brideParents;
 
+  const groomEl = document.getElementById('groom-name');
+  if (groomEl) groomEl.textContent = WEDDING_CONFIG.couple.groom;
+
+  const groomParentsEl = document.getElementById('groom-parents');
+  if (groomParentsEl) groomParentsEl.textContent = WEDDING_CONFIG.couple.groomParentsFormatted || WEDDING_CONFIG.couple.groomParents;
+
   // Footer couple names
   const footerCoupleEl = document.getElementById('footer-couple-name');
   if (footerCoupleEl) {
     footerCoupleEl.textContent = `${WEDDING_CONFIG.couple.bride} & ${WEDDING_CONFIG.couple.groom}`;
+  }
+
+  // Invitation text
+  const inviteBodyEl = document.getElementById('invite-body');
+  if (inviteBodyEl && WEDDING_CONFIG.invitationText) {
+    inviteBodyEl.textContent = WEDDING_CONFIG.invitationText.body;
   }
 
   // Bismillah
@@ -274,25 +280,21 @@ function initCalendarButtons() {
   }
 }
 
-// Interactive RSVP Form to WhatsApp
-function initRSVPForm() {
-  const form = document.getElementById('rsvp-form');
+// Interactive Wishes & Compliments Form to WhatsApp
+function initWishesForm() {
+  const form = document.getElementById('wishes-form');
   if (!form) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const guestName = document.getElementById('rsvp-name')?.value || '';
-    const guestCount = document.getElementById('rsvp-guests')?.value || '1';
-    const attending = document.querySelector('input[name="attendance"]:checked')?.value || 'Attending';
-    const message = document.getElementById('rsvp-message')?.value || '';
+    const guestName = document.getElementById('wish-name')?.value || '';
+    const message = document.getElementById('wish-message')?.value || '';
 
-    const text = `*WEDDING RSVP*%0A` +
-      `*Couple:* Mohammed Abrar Ali %26 Fathima Fairooza%0A` +
-      `*Name:* ${encodeURIComponent(guestName)}%0A` +
-      `*Status:* ${encodeURIComponent(attending)}%0A` +
-      `*Guests:* ${encodeURIComponent(guestCount)}%0A` +
-      (message ? `*Wishes:* ${encodeURIComponent(message)}%0A` : '') +
-      `%0A_Sent via Wedding Invitation Website_`;
+    const text = `*WEDDING WISHES & BLESSINGS*%0A` +
+      `*To Dear Couple:* Fathima Fairooza %26 Mohammed Abrar Ali%0A` +
+      `*From:* ${encodeURIComponent(guestName)}%0A` +
+      `*Message:* ${encodeURIComponent(message)}%0A` +
+      `%0A_Sent via Wedding Website_`;
 
     const phone = WEDDING_CONFIG?.contact?.whatsappNumber || "919876543210";
     window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');

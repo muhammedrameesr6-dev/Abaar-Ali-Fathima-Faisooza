@@ -1,17 +1,10 @@
 /**
  * Wedding Website Configuration
- * Updated with exact details for Mohammed Abrar Ali & Fathima Fairooza
+ * Updated with exact details for Fathima Fairooza & Mohammed Abrar Ali
  */
 const WEDDING_CONFIG = {
-  // Couple Information
+  // Couple Information (Bride First, Groom Second)
   couple: {
-    groom: "Mohammed Abrar Ali",
-    groomFather: "Mohammad Razi TS",
-    groomMother: "Saheedabi KA",
-    groomParentsFormatted: "S/O Mohammad Razi TS & Saheedabi KA",
-    groomGrandparents: "T Sulaiman Haji Thangees & A Zainabi Hajuma",
-    groomFamily: "Aboobacker Bellakkaran & Khadeeja Hajuma Peediekkaran",
-
     bride: "Fathima Fairooza",
     brideFather: "Mohammed Imthiyaz",
     brideMother: "Khairunnisa",
@@ -19,33 +12,35 @@ const WEDDING_CONFIG = {
     brideGrandparents: "Abdul Rahman & Asiya",
     brideFamily: "T.A Abdullah Anjillam & Jameela",
 
-    title: "Mohammed Abrar Ali & Fathima Fairooza",
+    groom: "Mohammed Abrar Ali",
+    groomFather: "Mohammad Razi TS",
+    groomMother: "Saheedabi KA",
+    groomParentsFormatted: "S/O Mohammad Razi TS & Saheedabi KA",
+    groomGrandparents: "T Sulaiman Haji Thangees & A Zainabi Hajuma",
+    groomFamily: "Aboobacker Bellakkaran & Khadeeja Hajuma Peediekkaran",
+
+    title: "Fathima Fairooza & Mohammed Abrar Ali",
     subtitle: "Wedding Invitation"
   },
 
-  // Bismillah & Quranic Verse
+  // Bismillah
   bismillah: {
     arabic: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
     english: "In the Name of Allah",
     subEnglish: "The Most Gracious & The Most Merciful"
   },
 
-  // Wedding Quran Verse for Page 1 & Blessing
-  weddingAyah: {
-    arabic: "وَخَلَقْنَاكُمْ أَزْوَاجًا",
-    reference: "SURAH AN-NABA | 78:8",
-    translation: "\"And We created you in pairs.\""
-  },
-  
+  // Invitation Letter Text
   invitationText: {
     heading: "You Are Cordially Invited",
-    body: "With hearts full of joy and gratitude, we cordially invite your esteemed presence along with your family on the auspicious occasion of the wedding ceremony of our beloved ones. Your prayers, blessings, and gracious presence will make this sacred and joyous occasion truly memorable."
+    body: "With hearts full of joy and gratitude, we cordially invite your esteemed presence along with your family to the auspicious occasion of the wedding ceremony of our beloved daughter"
   },
 
+  // Sacred Quranic Verse (Surah Ar-Rum 30:21)
   quranVerse: {
-    arabic: "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
-    reference: "SURAH AL-FURQAN | 25:74",
-    translation: "\"Our Lord, grant us from among our spouses and our offspring comfort to our eyes, and make us an example for the righteous.\""
+    arabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ",
+    reference: "SURAH AR-RUM | 30:21",
+    translation: "\"And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them; and He placed between you affection and mercy. Indeed in that are signs for a people who reflect.\""
   },
 
   // Wedding Date & Hijri
@@ -81,10 +76,10 @@ const WEDDING_CONFIG = {
     dateDisplay: "SATURDAY, 19 DECEMBER 2026 • 4:30 PM"
   },
 
-  // Contact / RSVP via WhatsApp
+  // Contact / Wishes via WhatsApp
   contact: {
     whatsappNumber: "919876543210", // മാറ്റാവുന്ന WhatsApp നമ്പർ
-    whatsappMessage: "Assalamu Alaikum! We are pleased to RSVP for the wedding of Mohammed Abrar Ali & Fathima Fairooza."
+    whatsappMessage: "Assalamu Alaikum! Sending our warmest wishes and prayers to Fathima Fairooza & Mohammed Abrar Ali on their wedding!"
   },
 
   // Audio settings

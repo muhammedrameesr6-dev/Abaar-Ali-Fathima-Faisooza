@@ -238,49 +238,36 @@ body {
    PAGE 1: INVITATION COVER / LETTER (Direct reference match)
    ========================================================================== */
 .bismillah-block {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .bismillah-arabic {
   font-family: var(--font-arabic);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--color-maroon);
-  line-height: 1.6;
+  line-height: 1.8;
   letter-spacing: 0.5px;
   text-shadow: 0 1px 3px rgba(128, 0, 0, 0.12);
 }
 
-.wedding-ayah-hero {
-  margin: 6px 0 10px;
-}
-
-.wedding-ayah-arabic {
-  font-family: var(--font-arabic);
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--color-maroon);
-  line-height: 1.4;
-  letter-spacing: 1px;
-  text-shadow: 0 1px 4px rgba(128, 0, 0, 0.15);
-}
-
-.wedding-ayah-trans {
+.bismillah-english {
   font-family: var(--font-serif);
-  font-size: 15px;
-  font-style: italic;
+  font-size: 13.5px;
+  letter-spacing: 2px;
   color: var(--color-gold-dark);
-  margin-top: 3px;
+  text-transform: capitalize;
   font-weight: 600;
+  margin-top: 4px;
 }
 
-.wedding-ayah-ref {
-  font-family: var(--font-royal);
-  font-size: 8.5px;
-  letter-spacing: 2px;
+.bismillah-subenglish {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  letter-spacing: 1px;
   color: var(--color-text-muted);
-  font-weight: 600;
-  margin-top: 2px;
+  font-style: italic;
+  margin-top: 1px;
 }
 
 .invite-title {
@@ -635,6 +622,82 @@ body {
 /* ==========================================================================
    PAGE 6: RSVP & SIGN-OFF
    ========================================================================== */
+/* ==========================================================================
+   Wishes & Compliments Card
+   ========================================================================== */
+.wishes-card {
+  width: 100%;
+  max-width: 300px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  border-radius: 16px;
+  padding: 16px 14px 14px;
+  box-shadow: 0 4px 16px rgba(128, 0, 0, 0.08);
+  margin-top: 10px;
+  text-align: center;
+}
+
+.wishes-tag {
+  font-family: var(--font-royal);
+  font-size: 8.5px;
+  letter-spacing: 2.5px;
+  color: var(--color-gold-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.wishes-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-maroon);
+  letter-spacing: 1px;
+}
+
+.wishes-subtitle {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  margin-bottom: 12px;
+}
+
+.wishes-form {
+  width: 100%;
+  text-align: left;
+}
+
+.wishes-submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-maroon);
+  color: #FFFFFF;
+  border: 1px solid var(--color-gold);
+  border-radius: 25px;
+  padding: 9px 16px;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 4px 14px rgba(128, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.wishes-submit-btn:hover,
+.wishes-submit-btn:active {
+  background-color: var(--color-maroon-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(128, 0, 0, 0.35);
+}
+
 .rsvp-title {
   font-family: var(--font-serif);
   font-size: 24px;
