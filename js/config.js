@@ -29,6 +29,13 @@ const WEDDING_CONFIG = {
     english: "In the Name of Allah",
     subEnglish: "The Most Gracious & The Most Merciful"
   },
+
+  // Wedding Quran Verse for Page 1 & Blessing
+  weddingAyah: {
+    arabic: "وَخَلَقْنَاكُمْ أَزْوَاجًا",
+    reference: "SURAH AN-NABA | 78:8",
+    translation: "\"And We created you in pairs.\""
+  },
   
   invitationText: {
     heading: "You Are Cordially Invited",
@@ -36,9 +43,9 @@ const WEDDING_CONFIG = {
   },
 
   quranVerse: {
-    arabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ",
-    reference: "SURAH AR-RUM | 30:21",
-    translation: "\"And He placed between you affection and mercy. Indeed in that are signs for a people who reflect.\""
+    arabic: "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+    reference: "SURAH AL-FURQAN | 25:74",
+    translation: "\"Our Lord, grant us from among our spouses and our offspring comfort to our eyes, and make us an example for the righteous.\""
   },
 
   // Wedding Date & Hijri

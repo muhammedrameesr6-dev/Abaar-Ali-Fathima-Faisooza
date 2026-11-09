@@ -238,36 +238,49 @@ body {
    PAGE 1: INVITATION COVER / LETTER (Direct reference match)
    ========================================================================== */
 .bismillah-block {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .bismillah-arabic {
   font-family: var(--font-arabic);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--color-maroon);
-  line-height: 1.8;
+  line-height: 1.6;
   letter-spacing: 0.5px;
   text-shadow: 0 1px 3px rgba(128, 0, 0, 0.12);
 }
 
-.bismillah-english {
-  font-family: var(--font-serif);
-  font-size: 13.5px;
-  letter-spacing: 2px;
-  color: var(--color-gold-dark);
-  text-transform: capitalize;
-  font-weight: 600;
-  margin-top: 4px;
+.wedding-ayah-hero {
+  margin: 6px 0 10px;
 }
 
-.bismillah-subenglish {
-  font-family: var(--font-serif);
-  font-size: 12px;
+.wedding-ayah-arabic {
+  font-family: var(--font-arabic);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-maroon);
+  line-height: 1.4;
   letter-spacing: 1px;
-  color: var(--color-text-muted);
+  text-shadow: 0 1px 4px rgba(128, 0, 0, 0.15);
+}
+
+.wedding-ayah-trans {
+  font-family: var(--font-serif);
+  font-size: 15px;
   font-style: italic;
-  margin-top: 1px;
+  color: var(--color-gold-dark);
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+.wedding-ayah-ref {
+  font-family: var(--font-royal);
+  font-size: 8.5px;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-top: 2px;
 }
 
 .invite-title {
