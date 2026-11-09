@@ -3,25 +3,30 @@
  * Theme: Classic Maroon (#800000) & Warm Rose
  */
 (function() {
-  const canvas = document.createElement('canvas');
-  canvas.id = 'petals-canvas';
-  canvas.style.position = 'fixed';
-  canvas.style.top = '0';
-  canvas.style.left = '0';
-  canvas.style.width = '100%';
-  canvas.style.height = '100%';
-  canvas.style.pointerEvents = 'none';
-  canvas.style.zIndex = '999';
-  document.addEventListener('DOMContentLoaded', () => {
-    document.body.appendChild(canvas);
-    initPetals();
-  });
-
+  let canvas;
   let ctx;
   let width = window.innerWidth;
   let height = window.innerHeight;
   let petals = [];
-  const PETAL_COUNT = 24;
+  const PETAL_COUNT = 20;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    canvas = document.getElementById('petals-canvas');
+    if (!canvas) {
+      canvas = document.createElement('canvas');
+      canvas.id = 'petals-canvas';
+      document.body.appendChild(canvas);
+    }
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '12';
+
+    initPetals();
+  });
 
   const PETAL_COLORS = [
     { start: '#800000', end: '#500000' }, // Classic Maroon #800000
