@@ -280,23 +280,112 @@ function initCalendarButtons() {
   }
 }
 
-// Interactive Wishes & Compliments Form to WhatsApp
+// Interactive On-Page Wishes Guestbook Display
 function initWishesForm() {
   const form = document.getElementById('wishes-form');
-  if (!form) return;
+  const wishesList = document.getElementById('wishes-list');
+  const wishesCountEl = document.getElementById('wishes-count');
+  if (!form || !wishesList) return;
+
+  const STORAGE_KEY = 'wedding_wishes_abrar_fathima';
+
+  // Default sweet blessings
+  const defaultWishes = [
+    {
+      name: "Shafi & Family",
+      message: "Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fee khair! Wishing Fathima & Abrar a blessed married life.",
+      time: "Recent"
+    },
+    {
+      name: "Uncle & Family",
+      message: "Heartiest congratulations to the dearest couple! May your home always be filled with joy, barakah, and love.",
+      time: "Recent"
+    }
+  ];
+
+  function getWishes() {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed;
+        }
+      }
+    } catch (e) {
+      console.warn("localStorage not accessible", e);
+    }
+    return defaultWishes;
+  }
+
+  function saveWishes(wishes) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(wishes));
+    } catch (e) {
+      console.warn("Failed to save to localStorage", e);
+    }
+  }
+
+  function escapeHTML(str) {
+    const p = document.createElement('p');
+    p.appendChild(document.createTextNode(str));
+    return p.innerHTML;
+  }
+
+  function renderWishes() {
+    const wishes = getWishes();
+    if (wishesCountEl) {
+      wishesCountEl.textContent = `(${wishes.length})`;
+    }
+
+    wishesList.innerHTML = wishes.map((w, idx) => `
+      <div class="wish-item ${idx === 0 ? 'wish-item-new' : ''}">
+        <div class="wish-header">
+          <span class="wish-author">${escapeHTML(w.name)}</span>
+          <span class="wish-time">${escapeHTML(w.time || 'Just now')}</span>
+        </div>
+        <p class="wish-text">“${escapeHTML(w.message)}”</p>
+      </div>
+    `).join('');
+  }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const guestName = document.getElementById('wish-name')?.value || '';
-    const message = document.getElementById('wish-message')?.value || '';
+    const nameInput = document.getElementById('wish-name');
+    const msgInput = document.getElementById('wish-message');
+    const guestName = nameInput?.value.trim() || '';
+    const message = msgInput?.value.trim() || '';
 
-    const text = `*WEDDING WISHES & BLESSINGS*%0A` +
-      `*To Dear Couple:* Fathima Fairooza %26 Mohammed Abrar Ali%0A` +
-      `*From:* ${encodeURIComponent(guestName)}%0A` +
-      `*Message:* ${encodeURIComponent(message)}%0A` +
-      `%0A_Sent via Wedding Website_`;
+    if (!guestName || !message) return;
 
-    const phone = WEDDING_CONFIG?.contact?.whatsappNumber || "919876543210";
-    window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
+    const newWish = {
+      name: guestName,
+      message: message,
+      time: 'Just now'
+    };
+
+    const wishes = getWishes();
+    wishes.unshift(newWish);
+    saveWishes(wishes);
+    renderWishes();
+
+    // Reset input fields
+    nameInput.value = '';
+    msgInput.value = '';
+
+    // Show smooth feedback toast
+    const feedback = document.getElementById('wish-feedback');
+    if (feedback) {
+      feedback.style.display = 'block';
+      feedback.textContent = '✨ Thank you for your warm wishes!';
+      setTimeout(() => {
+        feedback.style.display = 'none';
+      }, 3500);
+    }
+
+    // Scroll wishes list to top to see newly added wish
+    wishesList.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  renderWishes();
 }

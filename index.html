@@ -270,11 +270,11 @@
           <span class="diamond-icon">✦</span>
         </div>
 
-        <!-- Send Wishes & Compliments Option (As requested in Audio 4) -->
+        <!-- Send Wishes & Compliments Option (On-Page Display) -->
         <div class="wishes-card fade-on-scroll">
           <div class="wishes-tag">BLESSINGS &amp; COMPLIMENTS</div>
           <h3 class="wishes-title">Send Warm Wishes</h3>
-          <p class="wishes-subtitle">Share your prayers &amp; congratulations with Fathima &amp; Abrar</p>
+          <p class="wishes-subtitle">Share your prayers &amp; congratulations for Fathima &amp; Abrar</p>
 
           <form id="wishes-form" class="wishes-form">
             <div class="form-group">
@@ -284,16 +284,28 @@
 
             <div class="form-group">
               <label class="form-label" for="wish-message">Your Wishes &amp; Prayers</label>
-              <textarea id="wish-message" class="form-textarea" rows="2" placeholder="Send your love, blessings &amp; congratulations..." required></textarea>
+              <textarea id="wish-message" class="form-textarea" rows="2" placeholder="Write your heartfelt prayers &amp; wishes..." required></textarea>
             </div>
 
-            <button type="submit" class="wishes-submit-btn">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.838.814 2.8.814 3.179 0 5.766-2.586 5.766-5.766 0-3.18-2.587-5.766-5.77-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.748 0-3.385-.45-4.819-1.236l-7.181 1.884 1.916-6.996c-.881-1.488-1.396-3.228-1.396-5.084 0-5.514 4.486-10 10-10s10 4.486 10 10z"/>
+            <button type="submit" class="wishes-submit-btn" id="wish-submit-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 2L11 13"></path>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
               </svg>
-              <span>Send Wishes via WhatsApp</span>
+              <span>Post Your Wish</span>
             </button>
+            <div class="wish-feedback" id="wish-feedback" style="display: none;"></div>
           </form>
+
+          <!-- On-Page Live Wishes Feed Display -->
+          <div class="wishes-feed-header">
+            <span>Warm Wishes Received</span>
+            <span class="wishes-count" id="wishes-count">(0)</span>
+          </div>
+
+          <div class="wishes-list" id="wishes-list">
+            <!-- Dynamically populated from JavaScript -->
+          </div>
         </div>
 
         <!-- Footer Couple Names & Blessings -->

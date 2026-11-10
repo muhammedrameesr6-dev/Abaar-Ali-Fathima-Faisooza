@@ -623,16 +623,24 @@ body {
    PAGE 6: RSVP & SIGN-OFF
    ========================================================================== */
 /* ==========================================================================
-   Wishes & Compliments Card
+   Wishes & Compliments Card & On-Page Feed
    ========================================================================== */
+#page-5.wedding-page {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  justify-content: flex-start;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .wishes-card {
   width: 100%;
-  max-width: 300px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(197, 160, 89, 0.45);
-  border-radius: 16px;
+  max-width: 315px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(197, 160, 89, 0.5);
+  border-radius: 18px;
   padding: 16px 14px 14px;
-  box-shadow: 0 4px 16px rgba(128, 0, 0, 0.08);
+  box-shadow: 0 4px 18px rgba(128, 0, 0, 0.08);
   margin-top: 10px;
   text-align: center;
 }
@@ -686,7 +694,7 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 8px;
+  margin-top: 6px;
   box-shadow: 0 4px 14px rgba(128, 0, 0, 0.25);
   transition: all 0.3s ease;
 }
@@ -696,6 +704,112 @@ body {
   background-color: var(--color-maroon-dark);
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(128, 0, 0, 0.35);
+}
+
+.wish-feedback {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #1b6324;
+  background: rgba(220, 245, 225, 0.95);
+  border: 1px solid rgba(50, 150, 70, 0.35);
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* On-Page Live Wishes Feed Display */
+.wishes-feed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  padding: 0 4px 5px;
+  border-bottom: 1px dashed rgba(197, 160, 89, 0.45);
+  font-family: var(--font-royal);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--color-maroon);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.wishes-count {
+  color: var(--color-gold-dark);
+}
+
+.wishes-list {
+  max-height: 180px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 2px 2px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.wishes-list::-webkit-scrollbar {
+  width: 4px;
+}
+.wishes-list::-webkit-scrollbar-thumb {
+  background: rgba(197, 160, 89, 0.4);
+  border-radius: 4px;
+}
+
+.wish-item {
+  background: rgba(250, 246, 238, 0.95);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 10px;
+  padding: 8px 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.wish-item-new {
+  border-color: var(--color-gold);
+  background: #FFFDF9;
+  animation: highlightWish 1.5s ease;
+}
+
+@keyframes highlightWish {
+  0% { transform: scale(1.02); box-shadow: 0 0 10px rgba(197, 160, 89, 0.5); }
+  100% { transform: scale(1); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03); }
+}
+
+.wish-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.wish-author {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-maroon);
+  letter-spacing: 0.3px;
+}
+
+.wish-time {
+  font-family: var(--font-sans);
+  font-size: 8px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.wish-text {
+  font-family: var(--font-serif);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--color-text-dark);
+  font-style: italic;
 }
 
 .rsvp-title {
