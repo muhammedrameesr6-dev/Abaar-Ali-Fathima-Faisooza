@@ -9,8 +9,8 @@ const WEDDING_CONFIG = {
     brideFather: "Mohammed Imthiyaz",
     brideMother: "Khairunnisa",
     brideParentsFormatted: "D/O Mohammed Imthiyaz & Khairunnisa",
-    brideGrandparents: "Abdul Rahman & Asiya",
-    brideFamily: "T.A Abdullah Anjillam & Jameela",
+    brideGrandparents: "Abdul Rahman & Asiya and T.A Abdullah Anjillam & Jameela",
+    brideGrandparentsFormatted: "Granddaughter of Abdul Rahman & Asiya and T.A Abdullah Anjillam & Jameela",
 
     groom: "Mohammed Abrar Ali",
     groomFather: "Mohammad Razi TS",
